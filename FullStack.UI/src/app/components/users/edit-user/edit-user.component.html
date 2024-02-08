@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="container my-5">
+        <h1 class="mb-3">Edit User</h1>
+        <div class="row">
+            <div class="col-5">
+                <form #form="ngForm" (ngSubmit)="updateUser()">
+                    <!-- <div class="mb-3">
+                        <label for="id" class="form-label">Id</label>
+                        <input type="text" class="form-control" id="id" readonly
+                        name="id" [(ngModel)]="usersDetails.id">
+                    </div> -->
+                    <!-- <div class="mb-3">
+                        <label for="id" class="form-label">Id</label>
+                        <input type="text" class="form-control" id="id" name="id" [(ngModel)]="usersDetails.id">
+                    </div> -->
+                    <div style="
+                    color: red;
+                ">{{message}}</div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="username"
+                            [(ngModel)]="usersDetails.username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">UserEmail</label>
+                        <input type="email" class="form-control" id="email" name="useremail"
+                            [(ngModel)]="usersDetails.useremail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <input type="text" class="form-control" id="gender" name="gender"
+                            [(ngModel)]="usersDetails.gender">
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label for="departmentid" class="form-label">DepartmentId</label>
+                        <input type="number" class="form-control" id="departmentid" name="departmentid"
+                            [(ngModel)]="usersDetails.departmentid">
+                    </div> -->
+
+                    <div class="mb-3">
+                        <label for="departmentid" class="form-label">DepartmentName</label>
+                        <select   class="form-control" id="departmentid" name="departmentid"
+                            [(ngModel)]="usersDetails.departmentid">
+                            <option [value]="0" >--Select--</option>
+
+                            <option *ngFor="let dl of deptDetails"  [value]="dl.id">{{dl.departmentname}}</option>
+                        </select>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary mr-5">Save</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger" 
+                    (click)="deleteUser(usersDetails.id)">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

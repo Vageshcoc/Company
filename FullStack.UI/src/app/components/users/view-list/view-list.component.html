@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="container my-5">
+        <h1 class="mb-3">View User</h1>
+        <div class="row">
+            <div class="col-5">
+                <form #form="ngForm"  >
+                    <!-- <div class="mb-3">
+                        <label for="id" class="form-label">Id</label>
+                        <input type="text" class="form-control" id="id" readonly
+                        name="id" [(ngModel)]="usersDetails.id">
+                    </div> -->
+                    <div class="mb-3">
+                        <label for="id" class="form-label">Id : </label>
+                        <label for="id" class="form-label"> {{usersDetails.id}}</label>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name : </label>
+                        <label for="name" class="form-label">{{usersDetails.username}}</label>
+                       
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">UserEmail : </label>
+                        <label for="email" class="form-label">{{usersDetails.useremail}}</label>
+                       
+                    </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Gender : </label>
+                        <label for="email" class="form-label">{{usersDetails.gender}}</label>
+                      
+                    </div>
+                    <div class="mb-3">
+                        <label for="departmentid" class="form-label">DepartmentId : </label>
+                        <label for="email" class="form-label">{{usersDetails.departmentid}}</label>
+                       
+                    </div>
+                    <button type="button" class="btn btn-danger" 
+                    (click)="deleteUser(usersDetails.id)">Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

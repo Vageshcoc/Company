@@ -1,0 +1,38 @@
+<div class="container" my-5>
+    <div><h1 class="mb-3">Users</h1>
+<button type="submit" id="adduser" style="
+float: right; 
+"  routerLink="add">Add New User</button></div>
+    <table class="table" *ngIf="useres && useres.length>0">
+        <thead>
+            <tr>
+            
+                <th>Username</th>
+                <th>Useremail</th>
+                <th>Gender</th>
+                <th>DepartmentName</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let users of useres">
+               
+                <td>{{users.username}}</td>
+                <td>{{users.useremail}}</td>
+                <td>{{users.gender}}</td>
+                <td>{{users.departmentid}}</td>
+                <td>
+                    <button type="button" class="btn" 
+                    style="
+                    background-color: orange;
+                "  [routerLink]="['/users','view',users.id]">View</button> &nbsp;&nbsp;
+                    <Button class="btn btn-primary" [routerLink]="['/users','edit',users.id]">Edit</Button>&nbsp;&nbsp;
+               <button type="button" class="btn btn-danger" 
+                    (click)="deleteUser(users.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!useres || useres.length<=0">No Users Found</p>
+
+</div>

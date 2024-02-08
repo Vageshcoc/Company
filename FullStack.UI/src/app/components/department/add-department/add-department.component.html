@@ -1,0 +1,26 @@
+<div class="container my-5">
+    <h1 class="mb-3">Add New Department</h1>
+    <form #form="ngForm" (ngSubmit)="addDepartment()">
+        <div class="row">
+            <div class="col-5">
+               <!-- <div class="mb-3">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="id"
+                     name="id" [(ngModel)]="addDepartmentRequest.id">
+                </div>-->
+                <div style="
+                color: red;
+            ">{{message}}</div>
+                <div class="mb-3">
+                    <label for="departmentname" class="form-label">DepartmentName</label>
+                    <input type="text" class="form-control" id="departmentname"
+                    name="departmentname" [(ngModel)]="addDepartmentRequest.departmentname">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button> &nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" 
+                (click)="deleteDepartment(departmentDetails.id)">Close</button>
+            </div>
+        </div>
+    </form>
+</div>
